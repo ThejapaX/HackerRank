@@ -1,10 +1,4 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.util.Scanner;
 
 public class RansomNote {
 
@@ -36,35 +30,26 @@ public class RansomNote {
 			String ransomItem = ransomItems[i];
 			ransom[i] = ransomItem;
 		}
-		boolean valid = true;
 
-		for (int l = 0; l < m; l++) {
-			int cont = 0;
-			for (int i = 0; i < n; i++) {
-				if (ransom[i].equals(magazine[l])) {
-					String wordFound = ransom[i];
-					String SameWord = wordFound;
-					cont++;
-					if (SameWord.equals(wordFound) && cont > 1) {
-						valid = false;
-						break;
-					}
+		boolean valid = true;
+		test: for (int l = 0; l < n; l++) {
+			for (int i = 0; i < m; i++) {
+				if (!ransom[l].equals(magazine[i])) {
+					valid = false;
+				} else {
+					magazine[i] = "";
+					valid = true;
+					continue test;
 				}
 			}
-			if (cont == 0) {
-				valid = false;
-				break;
-			}
+			valid = false;
+			break;
 		}
-
 		if (valid) {
 			System.out.println("Yes");
 		} else {
 			System.out.println("No");
 		}
-
 		scanner.close();
-
 	}
-
 }
