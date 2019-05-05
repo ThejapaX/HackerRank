@@ -1,10 +1,5 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
+package solution.easy;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
 public class Min_Max_Sum {
 
