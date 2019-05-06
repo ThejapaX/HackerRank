@@ -41,7 +41,6 @@ public class RansomNote2_0 {
 					valid = false;
 				} else {
 					magazine[i] = "";
-					valid = true;
 					continue test;
 				}
 			}
